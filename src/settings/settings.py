@@ -30,3 +30,7 @@ JWT_TOKEN_SETTINGS = {
     "ALGORITHM": os.getenv("ALGORITHM"),
     "ACCESS_TOKEN_EXPIRE_MINUTES": os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"),
 }
+
+# docs settings
+OPENAPI_URL = os.getenv("OPENAPI_URL")
+ROOT_PATH = os.getenv("ROOT_PATH")

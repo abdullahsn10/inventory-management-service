@@ -7,6 +7,7 @@ from sqlalchemy import pool
 from alembic import context
 from src.settings.database import Base
 from src.models.inventory_item import InventoryItem
+from src.settings.settings import DATABASE_SETTINGS
 
 # Add the parent directory of 'src' to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -31,6 +32,10 @@ target_metadata = Base.metadata
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
+
+# Set the SQLAlchemy URL dynamically
+config.set_main_option("sqlalchemy.url", DATABASE_SETTINGS["URL"])
 
 
 def run_migrations_offline() -> None:
