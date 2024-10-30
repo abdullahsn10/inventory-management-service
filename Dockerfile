@@ -38,7 +38,7 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 COPY --from=builder /app /app
 
 # Expose the ports the app runs on and the gRPC port
-EXPOSE 8000 50051
+EXPOSE 8080
 
 # Define the command to run the application
 CMD ["sh", "init_script.sh"]
